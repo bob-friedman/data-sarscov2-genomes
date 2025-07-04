@@ -680,21 +680,14 @@ This part takes the verified data from Part 1 and calculates π.
 
 This comprehensive pipeline allows for scalable and robust calculation of nucleotide diversity from large SARS-CoV-2 genomic datasets, enabling detailed investigation of viral evolutionary dynamics. The use of memory-mapping, chunked processing, and careful indexing are key to its efficiency.
 
-![Nucleotide Diversity (π) for the Top 20 Lineages Over Time](https://i.imgur.com/k6lP0W1.png)
-
 <br>
 
-![alt text](./assets/figure1.png "Phylogenetic Tree of The SARS-CoV-2 Spike protein")
-
-**Figure 1: Phylogenetic Tree of The SARS-CoV-2 Spike protein.** The major clades are well-separated by nodes with high bootstrap support. For example, the Delta-like variants (`OM...` and `PQ...`) form a distinct group with high confidence (`94`, `100`), as do the Ancestral variants. This confirms the overall tree topology is robust.
-
-<br>
+![alt text](./results/heatmap_nucdiv.png "Nucleotide Diversity (π) for the Top 20 Lineages Over Time")
 
 **Figure 1: Nucleotide Diversity (π) for the Top 20 Lineages Over Time.** This heatmap visualizes the calculated nucleotide diversity (π) for the 20 SARS-CoV-2 Pango lineages with the highest total sample counts in the dataset. The y-axis lists the Pango lineages, and the x-axis represents bi-weekly time bins from late 2020 to early 2022. The color intensity, following the 'viridis' colormap, corresponds to the level of nucleotide diversity, where dark purple indicates low diversity (values near 0.0) and bright yellow indicates higher diversity (values approaching 0.0008). White spaces indicate time bins for which a given lineage had insufficient data to calculate a robust π value.
 
 The heatmap reveals distinct temporal patterns. For example, lineage B.1.177.7 shows relatively low but persistent diversity in late 2020 and early 2021. In contrast, lineage B.1.617.2 (Delta) exhibits a period of higher and more variable diversity throughout mid-to-late 2021, consistent with its global expansion and diversification. The emergence of various Omicron sublineages (prefixed with 'BA') in late 2021 and early 2022 is characterized by generally lower initial diversity, which is an expected signature of a selective sweep.
-
----
+<br>
 
 ### **Data Hosting Plan for Public Access**
 
