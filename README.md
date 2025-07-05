@@ -66,7 +66,8 @@ Researchers are strongly encouraged to consult this report to fully understand t
 
 If using this dataset or the methodology described in the technical report in your research, please cite:
 
-*   Friedman, R. 2025. *Technical Report: A Pipeline for Scalable Analysis of SARS-CoV-2 Nucleotide Diversity*. GitHub Repository. [https://github.com/bob-friedman/data-sarscov2-genomes](https://github.com/bob-friedman/data-sarscov2-genomes). https://doi.org/10.5281/zenodo.15815025. (Please also refer to `technical_report.md` for full details).
+*   Friedman, R. 2025. *Technical Report: A Pipeline for Scalable Analysis of SARS-CoV-2 Nucleotide Diversity*. GitHub Repository. [https://github.com/bob-friedman/data-sarscov2-genomes](https://github.com/bob-friedman/data-sarscov2-genomes). [(doi: 10.5281/zenodo.15815025)](https://doi.org/10.5281/zenodo.15815025)
+*   Please also refer to `technical_report.md` for full details.
 
 Consider also citing the original data sources and tools if relevant to your specific analysis, such as:
 *   The UShER platform and its publications.
