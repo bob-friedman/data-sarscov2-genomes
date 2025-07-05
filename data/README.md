@@ -1,0 +1,1 @@
+This data is derived from the UShER project, so it is licensed under its requirements. I chose the MIT license for the overall project to conform with the default license at Zenodo. The Technical Report is an academic work, so it is attribution only.
