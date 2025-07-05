@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/1012788432.svg)](https://doi.org/10.5281/zenodo.15815024)
 # SARS-CoV-2 Genome Diversity Analysis Dataset
 
 ## Project Overview
