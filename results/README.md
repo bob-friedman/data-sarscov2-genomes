@@ -1,1 +1,1 @@
-
+Note on Data Processing: The nucleotide diversity (π) values in the raw results file were generated with a preliminary version of the analysis script. A latent bug in this version could cause an artificial inflation of π in the presence of sequences with a high number of ambiguous bases ('N'). The primary visualization (heatmap) was generated **after** applying a strict quality filter (`pi < 0.001`), which removed all data points affected by this bug. All current and future analyses use a new, fully validated function that is robust to this issue.
