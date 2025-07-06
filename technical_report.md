@@ -365,8 +365,6 @@ grouped = df_meta_aligned.groupby(['pangolin_lineage', 'time_bin'])
 
 This function implements a robust, per-site calculation method. It determines the number of valid sequences (`n_k`) at each genomic position, calculates the nucleotide diversity for that specific site using Tajima's estimator, and then averages these values only over the sites where a valid comparison was possible. This approach is mathematically precise and ensures that regions with missing data (e.g., 'N's) do not artificially inflate or deflate the final diversity estimate, a problem that was identified and corrected during our validation process.
 
-Note: This section has been edited to reflect our updated code for the calculation below, even though it is undergoing further testing and validation. The previous code had a subtle bug in its calculation, so the version below is preferable to display for the purpose of this report.
-
 ```python
 # Stage 2, Cell 3: Partitioned Pi Calculation (Validated Method)
 def calculate_pi_robust(alignment_slice):
@@ -434,7 +432,7 @@ results_df.to_csv("nucleotide_diversity_results.csv", index=False)
 
 The heatmap reveals distinct temporal patterns. For example, lineage B.1.177.7 shows relatively low but persistent diversity in late 2020 and early 2021. In contrast, lineage B.1.617.2 (Delta) exhibits a period of higher and more variable diversity throughout mid-to-late 2021, consistent with its global expansion and diversification. The emergence of various Omicron sublineages (prefixed with 'BA') in late 2021 and early 2022 is characterized by generally lower initial diversity, which is an expected signature of a selective sweep.
 
-Note: The version of the `nucdiv_stats.py` script used for the initial analysis contains a bug that could inflate π values in the presence of highly divergent sequences. The results presented in the heatmap were generated after applying a filter (π < 0.001) that removed all affected data points. The core methodology has since been updated with a fully validated function for all ongoing and future analyses (to be uploaded soon).
+Note: The version of the `nucdiv_stats.py` script used for the initial analysis contains a bug that could inflate π values in the presence of highly divergent sequences. The results presented in the heatmap were generated after applying a filter (π < 0.001) that removed all affected data points. The core methodology has since been updated with a fully validated function for all ongoing and future analyses.
 
 <br>
 
