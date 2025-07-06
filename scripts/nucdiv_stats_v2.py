@@ -336,21 +336,43 @@ n_len = 29903   # Number of sites (sequence length) from your previous logs
 # ---------------------
 
 # @title Partitioned Nucleotide Diversity (π) - Calculation
-def calculate_pi_for_slice(alignment_slice):
-    """Calculates pi for a given numpy array slice of an alignment."""
-    num_sequences, seq_length = alignment_slice.shape
-    if num_sequences < 2: return 0.0
+def calculate_pi_robust(alignment_slice):
+    """
+    Calculates nucleotide diversity (π) using a validated, robust, per-site method.
+    This function correctly handles missing data ('N's).
+    """
+    n_seq, n_sites = alignment_slice.shape
+    if n_seq < 2:
+        return 0.0
 
-    total_pairwise_diffs = 0.0
-    total_possible_pairs = num_sequences * (num_sequences - 1) / 2
+    pi_sum_at_valid_sites = 0.0
+    sites_compared = 0
 
-    for i in range(seq_length):
-        column = alignment_slice[:, i]
-        counts = np.bincount(column, minlength=5)
-        num_same_pairs = sum(n * (n - 1) / 2 for n in counts[:4]) # Only A,C,G,T
-        total_pairwise_diffs += (total_possible_pairs - num_same_pairs)
+    # Iterate over each site (column) in the alignment
+    for i in range(n_sites):
+        col = alignment_slice[:, i]
+        # Consider only valid bases (A,C,G,T), ignoring 'N's
+        valid_bases = col[col < 4]
+        n_k = len(valid_bases)
 
-    return total_pairwise_diffs / (total_possible_pairs * seq_length)
+        # A comparison is only possible if there are at least 2 valid sequences
+        if n_k < 2:
+            continue
+        
+        sites_compared += 1
+        
+        # Calculate allele frequencies at this site
+        counts = np.bincount(valid_bases, minlength=4)
+        
+        # Calculate π for this site using Tajima's estimator: (n/(n-1)) * (1 - sum(p_i^2))
+        sum_freq_sq = np.sum((counts / n_k)**2)
+        pi_site = (n_k / (n_k - 1)) * (1 - sum_freq_sq)
+        
+        pi_sum_at_valid_sites += pi_site
+
+    # Average the per-site π values over the number of valid sites
+    final_pi = pi_sum_at_valid_sites / sites_compared if sites_compared > 0 else 0.0
+    return final_pi
 
 # --- Main Calculation Loop ---
 print("\n--- Starting Partitioned π Calculation ---")
@@ -370,7 +392,7 @@ for name, group_df in grouped:
     # Use these indices to select the correct rows from the memory-mapped array
     alignment_slice = alignment[indices, :]
 
-    pi = calculate_pi_for_slice(alignment_slice)
+    pi = calculate_pi_robust(alignment_slice)
 
     # Add this line to print the result for each group immediately.
     print(f"L: {name[0]}, T: {str(name[1])}, Pi: {pi:.6f}, N: {len(group_df)}")
