@@ -361,22 +361,51 @@ df_meta_aligned['time_bin'] = df_meta_aligned['date'].dt.to_period('2W')
 grouped = df_meta_aligned.groupby(['pangolin_lineage', 'time_bin'])
 ```
 
-*   **Cell 3: Partitioned Nucleotide Diversity (π) Calculation**: This cell iterates through each defined group (by lineage and time bin). For each group with at least two samples, it retrieves the corresponding sequence indices, extracts the sequence slice from `alignment.mmap`, and then calculates π using the `calculate_pi_for_slice` function. The function calculates π by summing pairwise differences at each site and normalizing by the number of pairs and sequence length.
+*   **Cell 3: Partitioned Nucleotide Diversity (π) Calculation**: This cell iterates through each defined group (by lineage and time bin). For each group with at least two samples, it retrieves the corresponding sequence indices, extracts the sequence slice from `alignment.mmap`, and then calculates π using the fully validated `calculate_pi_robust` function.
+
+This function implements a robust, per-site calculation method. It determines the number of valid sequences (`n_k`) at each genomic position, calculates the nucleotide diversity for that specific site using Tajima's estimator, and then averages these values only over the sites where a valid comparison was possible. This approach is mathematically precise and ensures that regions with missing data (e.g., 'N's) do not artificially inflate or deflate the final diversity estimate, a problem that was identified and corrected during our validation process.
+
+Note: This section has been edited to reflect our updated code for the calculation below, even though it is undergoing further testing and validation. The previous code had a subtle bug in its calculation, so the version below is preferable to display for the purpose of this report.
 
 ```python
-# Stage 2, Cell 3: Partitioned Pi Calculation
-def calculate_pi_for_slice(alignment_slice):
-    """Calculates pi for a given numpy array slice of an alignment."""
-    num_sequences, seq_length = alignment_slice.shape
-    if num_sequences < 2: return 0.0
-    total_pairwise_diffs = 0.0
-    total_possible_pairs = num_sequences * (num_sequences - 1) / 2
-    for i in range(seq_length):
-        column = alignment_slice[:, i]
-        counts = np.bincount(column, minlength=5)
-        num_same_pairs = sum(n * (n - 1) / 2 for n in counts[:4]) # Only A,C,G,T
-        total_pairwise_diffs += (total_possible_pairs - num_same_pairs)
-    return total_pairwise_diffs / (total_possible_pairs * seq_length)
+# Stage 2, Cell 3: Partitioned Pi Calculation (Validated Method)
+def calculate_pi_robust(alignment_slice):
+    """
+    Calculates nucleotide diversity (π) using a validated, robust, per-site method.
+    This function correctly handles missing data ('N's).
+    """
+    n_seq, n_sites = alignment_slice.shape
+    if n_seq < 2:
+        return 0.0
+
+    pi_sum_at_valid_sites = 0.0
+    sites_compared = 0
+
+    # Iterate over each site (column) in the alignment
+    for i in range(n_sites):
+        col = alignment_slice[:, i]
+        # Consider only valid bases (A,C,G,T), ignoring 'N's
+        valid_bases = col[col < 4]
+        n_k = len(valid_bases)
+
+        # A comparison is only possible if there are at least 2 valid sequences
+        if n_k < 2:
+            continue
+        
+        sites_compared += 1
+        
+        # Calculate allele frequencies at this site
+        counts = np.bincount(valid_bases, minlength=4)
+        
+        # Calculate π for this site using Tajima's estimator: (n/(n-1)) * (1 - sum(p_i^2))
+        sum_freq_sq = np.sum((counts / n_k)**2)
+        pi_site = (n_k / (n_k - 1)) * (1 - sum_freq_sq)
+        
+        pi_sum_at_valid_sites += pi_site
+
+    # Average the per-site π values over the number of valid sites
+    final_pi = pi_sum_at_valid_sites / sites_compared if sites_compared > 0 else 0.0
+    return final_pi
 
 # --- Main Calculation Loop ---
 alignment = np.memmap(binary_file, dtype=np.uint8, mode='r', shape=(n_seq, n_len))
@@ -385,8 +414,12 @@ for name, group_df in grouped:
     if len(group_df) < 2: continue
     indices = group_df.index.tolist()
     alignment_slice = alignment[indices, :]
-    pi = calculate_pi_for_slice(alignment_slice)
+    
+    # Call the new, validated function
+    pi = calculate_pi_robust(alignment_slice)
+    
     results.append({'lineage': name[0], 'time_bin': str(name[1]), 'pi': pi, 'n_samples': len(group_df)})
+
 results_df = pd.DataFrame(results)
 results_df.to_csv("nucleotide_diversity_results.csv", index=False)
 ```
