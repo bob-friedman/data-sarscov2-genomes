@@ -16,7 +16,7 @@ This directory contains the Python scripts used to generate the data and perform
 
 #### **Current Version (Recommended for All New Work)**
 
-*   **`nucdiv_stats_v2.py`**
+*   **`nucdiv_stats.py`** (or `nucdiv_stats_v2.py`)
     *   **Status:** **Current, Validated Version.**
     *   **Purpose:** This is the robust, fully validated script for analyzing the alignment file. It takes the large alignment as input, converts it to a high-performance binary format, and calculates nucleotide diversity (π) for each lineage, partitioned into time bins.
     *   **Methodology:** This script uses a per-site calculation method that correctly handles missing data and has been validated against a ground-truth, brute-force calculation. It is the recommended script for all new analyses.
