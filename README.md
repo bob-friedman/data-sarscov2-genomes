@@ -24,7 +24,8 @@ This repository is organized into the following directories:
 *   **/scripts**: Contains the Python scripts used for the data generation and analysis pipeline. See the [scripts/README.md](./scripts/README.md) for details on dependencies and usage.
 *   **/results**: Contains the final output files from the analysis, including key figures and the nucleotide diversity data tables. See the [results/README.md](./results/README.md) for a summary and interpretation of the findings.
 *   **technical_report.md**: A comprehensive document detailing the full data generation pipeline, theoretical background, and analytical methods.
-*   **brief_report.md**: A [Brief Report](./brief_report_1.md) that describes the quantification of the selective sweep event of the JN.1 lineage in the SARS-CoV-2 population.
+*   **brief_report_1.md**: A [Brief Report](./brief_report_1.md) that describes the quantification of the selective sweep event of the JN.1 lineage in the SARS-CoV-2 population.
+*   **brief_report_2.md**: A [Brief Report](./brief_report_2.md) that describes a comparative genomic analysis in the context of adapatation in the lineages JN.1 and BA.2.86 in the SARS-CoV-2 population.
 
 ## Note on Data Processing
 
@@ -40,4 +41,4 @@ Please also refer to `technical_report.md` for full details on citing the underl
 
 ## Acknowledgements
 
-The conceptual development of the methodology and the drafting of the technical report benefited significantly from discussions and iterative refinement with an AI language model, Gemini 2.5 Pro (Google). The author oversaw and reviewed the accuracy and robustness of all parts of this study.
+The conceptual development of the methodology and the drafting of the technical and brief reports benefited significantly from discussions and iterative refinement with an AI language model, Gemini 2.5 Pro (Google). The author oversaw and reviewed the accuracy and robustness of all parts of this study.
