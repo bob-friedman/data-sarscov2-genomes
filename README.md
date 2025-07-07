@@ -24,7 +24,7 @@ This repository is organized into the following directories:
 *   **/scripts**: Contains the Python scripts used for the data generation and analysis pipeline. See the [scripts/README.md](./scripts/README.md) for details on dependencies and usage.
 *   **/results**: Contains the final output files from the analysis, including key figures and the nucleotide diversity data tables. See the [results/README.md](./results/README.md) for a summary and interpretation of the findings.
 *   **technical_report.md**: A comprehensive document detailing the full data generation pipeline, theoretical background, and analytical methods.
-*   **brief_report.md**: A [brief report](./brief_report.md) that describes the quantification of the selective sweep event of the JN.1 lineage in the SARS-CoV-2 population.
+*   **brief_report.md**: A [Brief Report](./brief_report.md) that describes the quantification of the selective sweep event of the JN.1 lineage in the SARS-CoV-2 population.
 
 ## Note on Data Processing
 
