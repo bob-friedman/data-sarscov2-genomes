@@ -1,3 +1,5 @@
+# The following would be uncommented in Colab, but in its own Cell
+#  of shell code only (not mixed with Python code).
 # Commented out IPython magic to ensure Python compatibility.
 # %%shell
 # # Set a base URL for the latest data (Cell #1)
@@ -26,6 +28,8 @@
 import condacolab
 condacolab.install()
 
+# The following would be uncommented in Colab, but in its own Cell
+#  of shell code only (not mixed with Python code).
 # Commented out IPython magic to ensure Python compatibility.
 # %%shell
 # 
@@ -92,6 +96,8 @@ print("Subsampling complete. Control file created at ${CLADES_CONTROL_FILE}.")
 from google.colab import drive
 drive.mount('/content/drive')
 
+# The following would be uncommented in Colab, but in its own Cell
+#  of shell code only (not mixed with Python code).
 # Commented out IPython magic to ensure Python compatibility.
 # %%shell
 # # Cell #5b - Fully Resilient Consensus Generation Loop
