@@ -82,6 +82,8 @@ def verify_and_filter_fasta(input_path, clean_path, log_path, order_path):
 
 verify_and_filter_fasta(INPUT_FASTA, CLEAN_FASTA_OUTPUT, LOG_FILE_OUTPUT, ORDER_INDEX_OUTPUT)
 
+# The following would be uncommented in Colab, but in its own Cell
+#  of shell code only (not mixed with Python code).
 # Commented out IPython magic to ensure Python compatibility.
 # %%shell
 # RELEASE_DATE="2025/07/05"
