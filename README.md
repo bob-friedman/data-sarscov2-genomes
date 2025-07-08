@@ -27,6 +27,7 @@ This repository is organized into the following directories:
 *   **brief_report_1.md**: A [Brief Report](./reports/brief_report_1.md) that describes the quantification of the selective sweep event of the JN.1 lineage in the SARS-CoV-2 population.
 *   **brief_report_2.md**: A [Brief Report](./reports/brief_report_2.md) that describes a comparative genomic analysis in the context of adapatation in the lineages JN.1 and BA.2.86 in the SARS-CoV-2 population.
 *   **brief_report_3.md**: A [Brief Report](./reports/brief_report_3.md) that relies on a codon analysis to characterize two distinct selective sweeps relevant to the SARS-CoV-2 JN.1 lineage.
+*   **brief_report_4.md**: A [Brief Report](./reports/brief_report_4.md) shows how sampling heterogeneity can lead to analytical artifacts in the characterization of a selective sweep in the SARS-CoV-2 JN.1 lineage.
 
 ## Note on Data Processing
 
