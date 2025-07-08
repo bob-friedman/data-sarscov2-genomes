@@ -44,4 +44,4 @@ An earlier analysis was conducted on a dataset spanning from late 2020 to early 
 
 ---
 
-For a complete interpretation of these results and the full methodology, please see the main [Technical Report](../technical_report.md).
+For a complete interpretation of these results and the full methodology, please see the main [Technical Report](../reports/technical_report.md).
