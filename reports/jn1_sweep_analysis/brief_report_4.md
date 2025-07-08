@@ -9,6 +9,15 @@ A time-series dataset was constructed using all available JN.1 sequences from a 
 2.  **Stratified Analysis:** The analysis was repeated on a geographically stratified dataset, where the number of sequences from any single country was capped at a maximum of 20 per week to mitigate the influence of over-represented regions.
 3.  **Isolated Analysis:** The country contributing the most sequences to the dataset during the period of interest (early 2024) was identified. The analysis was then run a final time using only sequences from this single country.
 
+**1. Data Acquisition and Pre-processing**
+Sequence data and associated metadata for the SARS-CoV-2 JN.1 lineage, originating from submissions to the GISAID database, were acquired via a public build of the global phylogenetic tree (Turakhia et al., Nature Genetics, 2021). This build was constructed using the UShER pipeline for sequence alignment and phylogenetic placement. The dataset was filtered to include only sequences with complete collection dates and country-of-origin information. This curated metadata was loaded into a Pandas DataFrame (`temporal_jn1_meta`) for manipulation. A multiple sequence alignment was generated and stored as a memory-mapped NumPy array (`alignment`) for efficient processing.
+
+**2. Identification of Dominant Geographic Population**
+To investigate the source of a strong selective signal, the dataset was temporally stratified to isolate sequences collected on or after January 1, 2024. The frequency of sequences from each country was calculated for this period. The United States was identified as the dominant geographic source of submissions. Consequently, a country-specific subset of the main metadata DataFrame was created, containing only entries where the country of origin was 'USA'.
+
+**3. Temporal Frequency Analysis of Spike F456L**
+A longitudinal analysis was performed on the USA-specific subset to track the frequency of the F456L mutation within the Spike (S) protein. The genomic coordinates corresponding to codon 456 of the S gene were programmatically determined using a reference gene annotation file. The dataset was then grouped by epidemiological week. For each week, codons at the target position were extracted from the alignment for all corresponding sequences. Codons containing ambiguous nucleotides (i.e., 'N') were excluded from the analysis. The Biopython library was utilized to translate the valid codons into their respective amino acids. The frequency of Leucine (L) was calculated as the ratio of sequences encoding Leucine to the total number of sequences with valid codons for that week.
+
 **Results:**
 The three analytical stages produced starkly different results, telling a clear story of cause and effect.
 
