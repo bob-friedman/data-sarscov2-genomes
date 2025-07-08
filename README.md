@@ -5,7 +5,7 @@
 
 This repository contains the data, scripts, and results for a large-scale analysis of SARS-CoV-2 nucleotide diversity (π). The primary goal is to provide a reproducible pipeline and a curated dataset for studying viral evolution, particularly the dynamics of selective sweeps and variant transitions.
 
-The core of this project is a validated bioinformatic pipeline that processes the public UShER mutation-annotated phylogeny to generate a whole-genome alignment suitable for population genetic analysis. A comprehensive explanation of the methodology is available in the [Technical Report](./technical_report.md).
+The core of this project is a validated bioinformatic pipeline that processes the public UShER mutation-annotated phylogeny to generate a whole-genome alignment suitable for population genetic analysis. A comprehensive explanation of the methodology is available in the [Technical Report](./reports/technical_report.md).
 
 ## Getting Started
 
@@ -24,9 +24,9 @@ This repository is organized into the following directories:
 *   **/scripts**: Contains the Python scripts used for the data generation and analysis pipeline. See the [scripts/README.md](./scripts/README.md) for details on dependencies and usage.
 *   **/results**: Contains the final output files from the analysis, including key figures and the nucleotide diversity data tables. See the [results/README.md](./results/README.md) for a summary and interpretation of the findings.
 *   **technical_report.md**: A comprehensive document detailing the full data generation pipeline, theoretical background, and analytical methods.
-*   **brief_report_1.md**: A [Brief Report](./brief_report_1.md) that describes the quantification of the selective sweep event of the JN.1 lineage in the SARS-CoV-2 population.
-*   **brief_report_2.md**: A [Brief Report](./brief_report_2.md) that describes a comparative genomic analysis in the context of adapatation in the lineages JN.1 and BA.2.86 in the SARS-CoV-2 population.
-*   **brief_report_3.md**: A [Brief Report](./brief_report_3.md) that relies on a codon analysis to characterize two distinct selective sweeps relevant to the SARS-CoV-2 JN.1 lineage.
+*   **brief_report_1.md**: A [Brief Report](./reports/brief_report_1.md) that describes the quantification of the selective sweep event of the JN.1 lineage in the SARS-CoV-2 population.
+*   **brief_report_2.md**: A [Brief Report](./reports/brief_report_2.md) that describes a comparative genomic analysis in the context of adapatation in the lineages JN.1 and BA.2.86 in the SARS-CoV-2 population.
+*   **brief_report_3.md**: A [Brief Report](./reports/brief_report_3.md) that relies on a codon analysis to characterize two distinct selective sweeps relevant to the SARS-CoV-2 JN.1 lineage.
 
 ## Note on Data Processing
 
