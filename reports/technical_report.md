@@ -426,7 +426,7 @@ results_df.to_csv("nucleotide_diversity_results.csv", index=False)
 
 <br>
 
-![alt text](../historical_diversity_analysis/results/heatmap_nucdiv.png "Nucleotide Diversity (π) for the Top 20 Lineages Over Time")
+![alt text](../results/historical_diversity_analysis/heatmap_nucdiv.png "Nucleotide Diversity (π) for the Top 20 Lineages Over Time")
 
 **Figure 1: Nucleotide Diversity (π) for the Top 20 Lineages Over Time.** This heatmap visualizes the calculated nucleotide diversity (π) for the 20 SARS-CoV-2 Pango lineages with the highest total sample counts in the dataset. The y-axis lists the Pango lineages, and the x-axis represents bi-weekly time bins from late 2020 to early 2022. The color intensity, following the 'viridis' colormap, corresponds to the level of nucleotide diversity, where dark purple indicates low diversity (values near 0.0) and bright yellow indicates higher diversity (values approaching 0.0008). White spaces indicate time bins for which a given lineage had insufficient data to calculate a robust π value.
 
