@@ -21,7 +21,7 @@ First, the baseline analysis of the uncorrected global data revealed what appear
 Second, the analysis of the geographically stratified data completely eliminated this signal. After controlling for sampling bias by down-weighting the contribution of over-represented countries, the frequency of F456L remained at or near zero for the entire observation period. This result demonstrated that the sweep was not a global phenomenon.
 
 <!-- Figure 2 Placeholder -->
-![F456L Frequency Plot (Geographically Stratified](../results/f456l_stratified)
+![F456L Frequency Plot (Geographically Stratified](../results/f456l_stratified.png)
 ***Figure 2: Plot of F456L frequency using the geographically stratified dataset, showing the signal is absent.**
 
 Finally, the source of the bias was identified as the United States, which contributed a disproportionately large number of sequences. When the analysis was restricted to only JN.1 sequences from the USA, the signal of the selective sweep reappeared, this time in a more pronounced and volatile form. This confirmed that a strong, localized evolutionary event within the USA was responsible for the artifact observed in the initial global dataset.
