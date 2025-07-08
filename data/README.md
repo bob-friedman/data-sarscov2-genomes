@@ -25,7 +25,7 @@ gunzip -c *.fas.gz > all_clades_aligned_combined.fas
 *   **Subsampling Strategy:** The dataset includes genomes from the top 250 most prevalent Pangolin lineages. For each lineage, up to 1,000 genomes were randomly sampled (`random_state=42`). The exclusion of the `Unassigned` lineage resulted in 249 final clades.
 *   **Tools:** The pipeline uses `matUtils` (v0.5.8+) and `bcftools` (v1.18+).
 
-For a complete description of the methodology, please refer to the main [Technical Report](../technical_report.md).
+For a complete description of the methodology, please refer to the main [Technical Report](../reports/technical_report.md).
 
 ## License
 
