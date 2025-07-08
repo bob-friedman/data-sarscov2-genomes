@@ -10,7 +10,7 @@ The above analysis is divided into two main parts, corresponding to two key rese
 
 2.  **Temporal Dynamics:** How can we visualize evolutionary events in real-time? This is addressed by tracking the frequency of two key mutations over time within the JN.1 lineage: the lineage-defining `L455S` mutation and the emerging `F456L` mutation.
 
-The findings are summarized in two reports located in this directory.
+The findings are summarized in two of the reports located in this directory. Other reports are also archived here.
 
 ## Repository Structure
 
@@ -63,11 +63,11 @@ The script will perform the following steps automatically:
     -   It first verifies the integrity of `all_clades_aligned.fas`, creating a clean version (`verified_sequences.fas`).
     -   It then converts the clean FASTA into a high-performance memory-mapped NumPy file (`alignment.mmap`) for efficient access.
 2.  **Data Loading:** It loads the metadata, GFF annotations, and the binary alignment into memory.
-3.  **Comparative Diversity Analysis (Report 1):**
+3.  **Comparative Diversity Analysis (Report 1: brief_report_2.md):**
     -   It calculates nucleotide diversity (π) in sliding windows for both the JN.1 and BA.2.86 (Parent) groups.
     -   It generates and saves the comparative plot `jn1_ba286_sliding_window.png`.
     -   It performs a codon-by-codon analysis of key genes and prints a table of enriched mutations in JN.1.
-4.  **Temporal Sweep Analysis (Report 2):**
+4.  **Temporal Sweep Analysis (Report 2: brief_report_3.md):**
     -   It tracks the weekly frequency of the Spike `L455S` mutation and saves the plot `jn1_s455_frequency.png`.
     -   It tracks the weekly frequency of the Spike `F456L` mutation and saves the plot `f456l_frequency.png`.
 
