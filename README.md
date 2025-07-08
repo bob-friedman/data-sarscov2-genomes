@@ -26,6 +26,7 @@ This repository is organized into the following directories:
 *   **technical_report.md**: A comprehensive document detailing the full data generation pipeline, theoretical background, and analytical methods.
 *   **brief_report_1.md**: A [Brief Report](./brief_report_1.md) that describes the quantification of the selective sweep event of the JN.1 lineage in the SARS-CoV-2 population.
 *   **brief_report_2.md**: A [Brief Report](./brief_report_2.md) that describes a comparative genomic analysis in the context of adapatation in the lineages JN.1 and BA.2.86 in the SARS-CoV-2 population.
+*   **brief_report_3.md**: A [Brief Report](./brief_report_3.md) that relies on a codon analysis to characterize two distinct selective sweeps relevant to the SARS-CoV-2 JN.1 lineage.
 
 ## Note on Data Processing
 
