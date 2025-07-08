@@ -15,19 +15,19 @@ The three analytical stages produced starkly different results, telling a clear 
 First, the baseline analysis of the uncorrected global data revealed what appeared to be a classic selective sweep. The plot showed the frequency of F456L rising from near zero to a notable level beginning in early 2024, suggesting the emergence of a new, advantageous variant across the JN.1 lineage.
 
 <!-- Figure 1 Placeholder -->
-![S455 Frequency Plot](../results/f456l_frequency.png)
+![S455 Frequency Plot](../../results/jn1_sweep_analysis/f456l_frequency.png)
 ***Figure 1: Plot of F456L frequency using the original, uncorrected global dataset, showing an apparent sweep.**
 
 Second, the analysis of the geographically stratified data completely eliminated this signal. After controlling for sampling bias by down-weighting the contribution of over-represented countries, the frequency of F456L remained at or near zero for the entire observation period. This result demonstrated that the sweep was not a global phenomenon.
 
 <!-- Figure 2 Placeholder -->
-![F456L Frequency Plot (Geographically Stratified](../results/f456l_stratified.png)
+![F456L Frequency Plot (Geographically Stratified](../../results/jn1_sweep_analysis/f456l_stratified.png)
 ***Figure 2: Plot of F456L frequency using the geographically stratified dataset, showing the signal is absent.**
 
 Finally, the source of the bias was identified as the United States, which contributed a disproportionately large number of sequences. When the analysis was restricted to only JN.1 sequences from the USA, the signal of the selective sweep reappeared, this time in a more pronounced and volatile form. This confirmed that a strong, localized evolutionary event within the USA was responsible for the artifact observed in the initial global dataset.
 
 <!-- Figure 3 Placeholder -->
-![F456L Frequency Plot (USA Only)](../results/f456l_stratified_2.png)
+![F456L Frequency Plot (USA Only)](../../results/jn1_sweep_analysis/f456l_stratified_2.png)
 ***Figure 3: Plot of F456L frequency using only data from the USA, revealing a strong, localized sweep.**
 
 **Conclusion:**
