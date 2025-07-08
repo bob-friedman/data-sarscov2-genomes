@@ -40,10 +40,20 @@ The core software dependencies for this pipeline are:
 | `biopython`  | 1.81+   | `conda-forge` |
 | `scikit-allel`| 1.3.7+  | `conda-forge` |
 
+---
+
+### Standalone Analysis Script (for specific JN.1 reports)
+
+*   **`analysis_pipeline.py`**
+    *   **Purpose:** This script performs a specific series of analyses related to the initial JN.1 vs BA.2.86 comparison and temporal tracking of L455S/F456L mutations, as detailed in `brief_report_2.md` and `brief_report_3.md`. It handles data loading (expecting `all_clades_aligned.fas` and other files to be present), diversity calculations, and plot generation for these specific reports.
+    *   **Note:** While this script is functional for its specific purpose, the combination of `gemini_jn1.py` and `nucdiv_stats.py` is recommended for newer, more flexible analyses.
+
 ## Usage
 
-The recommended workflow is a two-step process:
-1.  Run the **`gemini_jn1.py`** script to generate the alignment.
-2.  Run the current, validated **`nucdiv_stats.py`** script on the output of step 1 to calculate diversity.
+The general recommended workflow is a two-step process:
+1.  Run the **`gemini_jn1.py`** script (or `nucdiv_v4.py`) to generate the `all_clades_aligned.fas` alignment.
+2.  Run the current, validated **`nucdiv_stats.py`** script (or `nucdiv_stats_v2.py`) on the output of step 1 to calculate nucleotide diversity for various lineages and time periods.
+
+Alternatively, to reproduce the specific analyses for the JN.1 vs BA.2.86 comparison and L455S/F456L temporal trends (as in `brief_report_2.md` and `brief_report_3.md`), you can run **`analysis_pipeline.py`**. Ensure all prerequisite files listed in its header are available in the same directory.
 
 For a complete breakdown of the code and methodology, please refer to the main [Technical Report](../reports/technical_report.md).
