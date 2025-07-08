@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/1012788432.svg)](https://doi.org/10.5281/zenodo.15815024)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15825646.svg)](https://doi.org/10.5281/zenodo.15825646)
 # SARS-CoV-2 Genome Diversity Analysis
 
 ## Project Overview
