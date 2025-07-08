@@ -14,16 +14,16 @@ In the second phase, this alignment was processed to calculate nucleotide divers
 
 The analysis produced three key visualizations that together provide a comprehensive picture of the JN.1 selective sweep.
 
-![Figure 1: Global Nucleotide Diversity During the JN.1 Sweep](./results/global_sweep.png)
+![Figure 1: Global Nucleotide Diversity During the JN.1 Sweep](../results/global_sweep.png)
 
 **Figure 1: Global SARS-CoV-2 Nucleotide Diversity During the JN.1 Sweep.** This plot shows the global weighted-average nucleotide diversity (π) from July 2023 through mid-2024. The data reveals a period of high, stable diversity until late October 2023, consistent with the co-circulation of multiple XBB sublineages. Beginning in November 2023, a sharp and sustained collapse in diversity is observed, reaching its lowest point in early February 2024. This pattern is the classic signature of a selective sweep, corresponding precisely with the period of JN.1's rapid rise to global dominance.
 
 <br>
 
-![Figure 2: Comparison of Nucleotide Diversity Calculation Methods](./results/global_sweep_alt.png)
+![Figure 2: Comparison of Nucleotide Diversity Calculation Methods](../results/global_sweep_alt.png)
 
 **Figure 2: Comparison of Nucleotide Diversity Calculation Methods.** This plot displays the global nucleotide diversity calculated using two different normalization methods: our primary method (normalized by valid sites) and an alternate method (normalized by total sequence length). The near-perfect superposition of the two lines indicates that the underlying sequence data is of high quality and that the observed sweep signal is exceptionally robust, not an artifact of a specific calculation choice.
 
-![Figure 3: Intra-Lineage Diversity within the JN.1 Family](./results/intra_lineage_diversification.png)
+![Figure 3: Intra-Lineage Diversity within the JN.1 Family](../results/intra_lineage_diversification.png)
 
 **Figure 3: Post-Sweep Diversification within the JN.1 Lineage.** This plot focuses exclusively on the internal genetic diversity *within* the JN.1 family of lineages from its emergence. The data shows a clear and steady increase in nucleotide diversity over time, starting from a very low baseline in late 2023. This pattern is the expected signature of post-sweep diversification, where new mutations accumulate on the successful genetic background after it has fixed in the population, gradually rebuilding genetic variation.
