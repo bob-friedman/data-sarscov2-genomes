@@ -46,4 +46,4 @@ The recommended workflow is a two-step process:
 1.  Run the **`gemini_jn1.py`** script to generate the alignment.
 2.  Run the current, validated **`nucdiv_stats.py`** script on the output of step 1 to calculate diversity.
 
-For a complete breakdown of the code and methodology, please refer to the main [Technical Report](../technical_report.md).
+For a complete breakdown of the code and methodology, please refer to the main [Technical Report](../reports/technical_report.md).
