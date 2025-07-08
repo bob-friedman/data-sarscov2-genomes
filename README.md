@@ -22,16 +22,18 @@ This repository is organized into the following directories:
 
 *   **/data**: Contains the primary compressed dataset files. See the [data/README.md](./data/README.md) for a detailed description of the data, its format, and provenance.
 *   **/scripts**: Contains the Python scripts used for the data generation and analysis pipeline. See the [scripts/README.md](./scripts/README.md) for details on dependencies and usage.
-*   **/results**: Contains the final output files from the analysis, including key figures and the nucleotide diversity data tables. See the [results/README.md](./results/README.md) for a summary and interpretation of the findings.
-*   **technical_report.md**: A comprehensive document detailing the full data generation pipeline, theoretical background, and analytical methods.
-*   **brief_report_1.md**: A [Brief Report](./reports/brief_report_1.md) that describes the quantification of the selective sweep event of the JN.1 lineage in the SARS-CoV-2 population.
-*   **brief_report_2.md**: A [Brief Report](./reports/brief_report_2.md) that describes a comparative genomic analysis in the context of adapatation in the lineages JN.1 and BA.2.86 in the SARS-CoV-2 population.
-*   **brief_report_3.md**: A [Brief Report](./reports/brief_report_3.md) that relies on a codon analysis to characterize two distinct selective sweeps relevant to the SARS-CoV-2 JN.1 lineage.
-*   **brief_report_4.md**: A [Brief Report](./reports/brief_report_4.md) shows how sampling heterogeneity can lead to analytical artifacts in the characterization of a selective sweep in the SARS-CoV-2 JN.1 lineage.
+*   **/results**: Contains the final output files from the analysis, including key figures and the nucleotide diversity data tables. These are organized into subdirectories based on the analysis (e.g., `jn1_sweep_analysis`, `historical_diversity_analysis`). See the [results/README.md](./results/README.md) for a summary and interpretation of the findings.
+*   **/reports**: Contains the detailed `technical_report.md` as well as specific brief reports on various analyses.
+    *   `technical_report.md`: A comprehensive document detailing the full data generation pipeline, theoretical background, and analytical methods.
+    *   `jn1_sweep_analysis/`: Subdirectory containing brief reports related to the JN.1 lineage analysis:
+        *   [Brief Report 1: Quantifying the JN.1 Selective Sweep](./reports/jn1_sweep_analysis/brief_report_1.md)
+        *   [Brief Report 2: Comparative Genomics of JN.1 and BA.2.86](./reports/jn1_sweep_analysis/brief_report_2.md)
+        *   [Brief Report 3: Visualizing Two Sweeps in JN.1](./reports/jn1_sweep_analysis/brief_report_3.md)
+        *   [Brief Report 4: Sampling Bias in F456L Sweep Analysis](./reports/jn1_sweep_analysis/brief_report_4.md)
 
 ## Note on Data Processing
 
-The nucleotide diversity (π) values in the initial raw results file (`results/nucleotide_diversity_results_filtered.csv`) were generated with a preliminary version of the analysis script. A latent bug in this version could cause an artificial inflation of π in the presence of sequences with a high number of ambiguous bases ('N'). The primary visualization (heatmap) was generated **after** applying a strict quality filter (π < 0.001), which removed all affected data points. All current and future analyses use a new, fully validated function that is robust to this issue.
+For the **historical diversity analysis (2020-2022)**, the nucleotide diversity (π) values in the data file (`results/historical_diversity_analysis/nucdiv_heatmap_data.csv`) were generated with a preliminary version of the analysis script (`scripts/nucdiv_stats_v1_archive.py`). A latent bug in this older script version could cause an artificial inflation of π in the presence of sequences with a high number of ambiguous bases ('N'). The visualization (`results/historical_diversity_analysis/heatmap_nucdiv.png`) presented for this historical period was generated **after** applying a strict quality filter (π < 0.001) to the data, which removed potentially affected data points. All current and future analyses, including the JN.1 study, use a new, fully validated function (`scripts/nucdiv_stats.py` or `scripts/nucdiv_stats_v2.py`) that is robust to this issue.
 
 ## Citation
 
