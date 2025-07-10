@@ -1,2 +1,0 @@
-(Leaf1:[0A>T],Leaf2:[0A>C])Anc1;
-AGTC
