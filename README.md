@@ -2,7 +2,7 @@
 
 ![Python Version](https://img.shields.io/badge/python-3.7+-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15825646.svg)](https://doi.org/10.5281/zenodo.15825646)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15815024.svg)](https://doi.org/10.5281/zenodo.15815024)
 
 ## Project Overview
 
