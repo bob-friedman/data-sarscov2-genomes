@@ -49,3 +49,12 @@ Please also refer to `technical_report.md` for full details on citing the underl
 ## Acknowledgements
 
 The conceptual development of the methodology and the drafting of the technical and brief reports benefited significantly from discussions and iterative refinement with an AI language model, Gemini 2.5 Pro (Google). The author oversaw and reviewed the accuracy and robustness of all parts of this study.
+
+## Related Guides
+
+The following guides, hosted on a related GitHub site, provide additional context and detailed explanations of methodologies relevant to the study of SARS-CoV-2 and viral genomics:
+
+*   **[Guide to Virus Genomics, Diversity, and Analysis](https://github.com/bob-friedman/EvolCat-Python/blob/main/guides/virus_genomics_guide.md)**: A comprehensive overview of core concepts, databases, and bioinformatic workflows used in viral genomics.
+    *   Includes a section on **[Advanced Topics and Modeling](https://github.com/bob-friedman/EvolCat-Python/blob/main/guides/virus_genomics_guide.md#advanced-topics-and-modeling)** which covers ancestral sequence reconstruction, predictive modeling of viral evolution, and estimating mutational fitness effects.
+*   **[Ancestral Sequence-Based Viral Evolution Modeling (PIPELINE.md)](https://github.com/bob-friedman/EvolCat-Python/blob/main/guides/PIPELINE.md)**: Details an end-to-end guided pipeline for training a Transformer-based sequence-to-sequence model on viral evolution data, including data acquisition from UShER and NCBI, ancestral state reconstruction (ASR) with IQ-TREE, and model training. This guide is particularly relevant for understanding methods like the ancestral reconstruction methods mentioned.
+*   **[Interpretable Viral Evolution Modeling (PIPELINE_2.md)](https://github.com/bob-friedman/EvolCat-Python/blob/main/guides/PIPELINE_2.md)**: A technical report on a Transformer-based pipeline for interpretable viral evolution modeling, focusing on SARS-CoV-2 Spike protein. This guide showcases the application of Transformer models to study viral evolution, including attention visualization to interpret model learnings, which is relevant to the transformer study.
