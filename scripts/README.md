@@ -57,3 +57,16 @@ The general recommended workflow is a two-step process:
 Alternatively, to reproduce the specific analyses for the JN.1 vs BA.2.86 comparison and L455S/F456L temporal trends (as in `brief_report_2.md` and `brief_report_3.md`), you can run **`analysis_pipeline.py`**. Ensure all prerequisite files listed in its header are available in the same directory.
 
 For a complete breakdown of the code and methodology, please refer to the main [Technical Report](../reports/technical_report.md).
+
+---
+
+### Standalone Script: Ancestral Sequence Reconstruction
+
+*   **`parsimony_reconstruction.py`**
+    *   **Purpose:** This script reconstructs ancestral biological sequences on a phylogenetic tree using a parsimony-based method. It takes a Newick tree file with mutational changes annotated on branches and a reference sequence for the root node as input.
+    *   **Input:** A text file where the first line is the Newick string (e.g., `((Leaf1:[1C>A],Leaf2:[1C>T])Anc1)Root;`) and the second line is the root/reference sequence (e.g., `CGTGA`). Mutations are 0-indexed.
+    *   **Output:** Prints the inferred sequences for all internal nodes and leaves to standard output.
+    *   **Methodology:**
+        1.  **Initial Pass (Root to Tips):** Calculates sequences for all nodes by applying specified mutations down each branch, starting with the provided root sequence.
+        2.  **Second Pass (Tips to Root):** Refines internal node sequences using Fitch's parsimony algorithm. For each site, if the sets of possible nucleotides from children nodes intersect, the intersection is assigned. If not, the union is assigned. IUPAC ambiguity codes are used to represent sets of nucleotides.
+    *   **Usage:** `python scripts/parsimony_reconstruction.py <path_to_input_file>`
