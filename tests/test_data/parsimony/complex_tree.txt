@@ -1,0 +1,2 @@
+((LeafA:[1G>T],LeafB:[2T>A])Anc1:[0C>G],(LeafC:[3A>G],LeafD:[0C>T,4G>C])Anc2)Root;
+CGTAG
