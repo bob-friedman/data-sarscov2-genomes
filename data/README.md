@@ -20,10 +20,14 @@ gunzip -c *.fas.gz > all_clades_aligned_combined.fas
 
 ### Provenance and Generation
 
-*   **Source Data:** The sequences were derived from the UShER mutation-annotated phylogeny, specifically the public release dated **2025-06-29** (`public-2025-06-29.all.masked.pb`).
+*   **Source Data:** The sequences were derived from the UShER mutation-annotated phylogeny (McBroome et al., 2021), specifically the public release dated **2025-06-29** (`public-2025-06-29.all.masked.pb`).
 *   **Reference Genome:** `NC_045512v2.fa`
 *   **Subsampling Strategy:** The dataset includes genomes from the top 250 most prevalent Pangolin lineages. For each lineage, up to 1,000 genomes were randomly sampled (`random_state=42`). The exclusion of the `Unassigned` lineage resulted in 249 final clades.
-*   **Tools:** The pipeline uses `matUtils` (v0.5.8+) and `bcftools` (v1.18+).
+*   **Tools:** The pipeline uses `matUtils` (McBroome et al., 2021) and `bcftools` (v1.18+).
+
+### References
+
+*   McBroome, J., Thornlow, B., Hinrichs, A. S., Kramer, A., De Maio, N., Goldman, N., Haussler, D., Corbett-Detig, R., & Turakhia, Y. (2021). A Daily-Updated Database and Tools for Comprehensive SARS-CoV-2 Mutation-Annotated Trees. *Molecular Biology and Evolution*, 38(12), 5819–5826. https://doi.org/10.1093/molbev/msab264
 
 For a complete description of the methodology, please refer to the main [Technical Report](../reports/technical_report.md).
 

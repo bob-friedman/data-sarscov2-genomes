@@ -44,7 +44,9 @@ If using this dataset, code, or the methodology in your research, please cite th
 
 *   Friedman, R. (2025). *A Pipeline for Scalable Analysis of SARS-CoV-2 Nucleotide Diversity* (Version 1.0) [Data set and software]. Zenodo. https://doi.org/10.5281/zenodo.15815025
 
-Please also refer to `technical_report.md` for full details on citing the underlying data sources and tools (e.g., UShER, bcftools).
+Please also refer to `technical_report.md` for full details on citing the underlying data sources and tools, including:
+
+*   **UShER and matUtils:** McBroome, J., et al. (2021). A Daily-Updated Database and Tools for Comprehensive SARS-CoV-2 Mutation-Annotated Trees. *Molecular Biology and Evolution*, 38(12), 5819–5826. https://doi.org/10.1093/molbev/msab264
 
 ## Acknowledgements
 
